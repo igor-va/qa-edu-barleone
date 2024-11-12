@@ -20,8 +20,9 @@ class TestCatalog:
         page_title = catalog_page.get_page_title()
         assert Titles.catalog_costume in page_title, Titles.error_title
 
-    @allure.story("Add good to 'Cart'")
-    @allure.description("Check add good 'Costume' to 'Cart'")
+    @pytest.mark.temp
+    @allure.story("Add product to 'Cart'")
+    @allure.description("Check add product 'Costume' to 'Cart'")
     def test_add_cart_costume(self, fixture_setup):
         self.driver = fixture_setup
         self.driver.get(TestData.URL_CATALOG)

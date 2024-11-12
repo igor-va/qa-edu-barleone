@@ -13,6 +13,7 @@ class CatalogPage(BasePage):
         BasePage.action_click(self, element=CatalogLocators.loc_link_catalog_costume)
 
     def click_add_cart_costume(self):
+        BasePage.action_click(self, element=CatalogLocators.loc_xpath_city_spb)
         BasePage.action_text_clear(self, element=CatalogLocators.loc_xpath_price_min)
         BasePage.action_text_type(self, element=CatalogLocators.loc_xpath_price_min, text=Prices.costume_price_min)
         BasePage.action_text_clear(self, element=CatalogLocators.loc_xpath_price_max)
@@ -20,7 +21,7 @@ class CatalogPage(BasePage):
         BasePage.action_click(self, element=CatalogLocators.loc_xpath_costume_size_catalog)
         BasePage.action_click(self, element=CatalogLocators.loc_xpath_sort)
         BasePage.action_click(self, element=CatalogLocators.loc_xpath_sort_min)
-        BasePage.action_click(self, element=CatalogLocators.loc_xpath_costume_model)
+        BasePage.action_click(self, element=CatalogLocators.loc_xpath_costume_model_min)
         BasePage.action_click(self, element=CatalogLocators.loc_xpath_costume_size_cart)
         BasePage.action_click(self, element=CatalogLocators.loc_xpath_cart_add)
 
