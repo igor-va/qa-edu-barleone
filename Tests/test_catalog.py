@@ -9,6 +9,7 @@ from Info.Texts import Texts
 @allure.feature("Page 'Catalog'")
 class TestCatalog:
 
+    @pytest.mark.temp
     @pytest.mark.smoke
     @allure.story("Section page 'Catalog'")
     @allure.description("Check open page 'Catalog'")
@@ -20,7 +21,6 @@ class TestCatalog:
         page_title = catalog_page.get_page_title()
         assert Titles.catalog_costume in page_title, Titles.error_title
 
-    @pytest.mark.temp
     @allure.story("Add product to 'Cart'")
     @allure.description("Check add product 'Costume' to 'Cart'")
     def test_add_cart_costume(self, fixture_setup):

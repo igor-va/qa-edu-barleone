@@ -11,7 +11,7 @@ services:
       - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
 
   edge:
-    image: selenium/node-edge:4.8.3-20230404
+    image: selenium/node-edge:latest
     shm_size: 2gb
     depends_on:
       - selenium-hub
