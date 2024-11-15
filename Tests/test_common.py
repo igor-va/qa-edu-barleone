@@ -26,6 +26,8 @@ class TestCommon:
         self.driver = fixture_setup
         self.driver.get(TestData.URL)
         common_page = CommonPage(self.driver)
+        import time
+        time.sleep(5)
         common_page.click_item_header_contacts()
         page_title = common_page.get_page_title()
         assert Titles.contacts_title in page_title, Titles.error_title

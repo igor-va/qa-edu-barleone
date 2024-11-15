@@ -78,6 +78,6 @@ pytest
 
 Для генерации Allure-отчета:
 ```
-pytest --alluredir=./AllureResults
-allure serve ./AllureResults
+pytest --alluredir AllureResults
+allure serve AllureResults
 ```

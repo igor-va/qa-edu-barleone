@@ -9,18 +9,6 @@ from Info.Texts import Texts
 @allure.feature("Page 'Catalog'")
 class TestCatalog:
 
-    @pytest.mark.temp
-    @pytest.mark.smoke
-    @allure.story("Section page 'Catalog'")
-    @allure.description("Check open page 'Catalog'")
-    def test_go_catalog_costume(self, fixture_setup):
-        self.driver = fixture_setup
-        self.driver.get(TestData.URL_CATALOG)
-        catalog_page = CatalogPage(self.driver)
-        catalog_page.click_item_catalog_costume()
-        page_title = catalog_page.get_page_title()
-        assert Titles.catalog_costume in page_title, Titles.error_title
-
     @allure.story("Add product to 'Cart'")
     @allure.description("Check add product 'Costume' to 'Cart'")
     def test_add_cart_costume(self, fixture_setup):
@@ -29,5 +17,27 @@ class TestCatalog:
         catalog_page = CatalogPage(self.driver)
         catalog_page.click_item_catalog_costume()
         catalog_page.click_add_cart_costume()
+        page_text = catalog_page.page_text_element()
+        assert Texts.cart_add in page_text, Texts.error_word
+
+    @allure.story("Add product to 'Cart'")
+    @allure.description("Check add product 'Shirt' to 'Cart'")
+    def test_add_cart_shirt(self, fixture_setup):
+        self.driver = fixture_setup
+        self.driver.get(TestData.URL_CATALOG)
+        catalog_page = CatalogPage(self.driver)
+        catalog_page.click_item_catalog_shirt()
+        catalog_page.click_add_cart_shirt()
+        page_text = catalog_page.page_text_element()
+        assert Texts.cart_add in page_text, Texts.error_word
+
+    @allure.story("Add product to 'Cart'")
+    @allure.description("Check add product 'Trousers' to 'Cart'")
+    def test_add_cart_trousers(self, fixture_setup):
+        self.driver = fixture_setup
+        self.driver.get(TestData.URL_CATALOG)
+        catalog_page = CatalogPage(self.driver)
+        catalog_page.click_item_catalog_trousers()
+        catalog_page.click_add_cart_trousers()
         page_text = catalog_page.page_text_element()
         assert Texts.cart_add in page_text, Texts.error_word

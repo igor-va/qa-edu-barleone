@@ -2,7 +2,8 @@ from selenium.webdriver.common.by import By
 
 
 class CommonLocators:
-    loc_tag_footer = (By.TAG_NAME, "footer")
+    # loc_tag_footer = (By.TAG_NAME, "footer")
+    loc_tag_footer = (By.XPATH, "//div[@class='footer__decor']")
 
     loc_link_sign_in = (By.LINK_TEXT, "Sign In")
     loc_link_catalog = (By.LINK_TEXT, "Каталог")

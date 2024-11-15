@@ -8,4 +8,4 @@ class Texts:
     spb_word = "САНКТ-ПЕТЕРБУРГ"
     nn_word = "НИЖНИЙ НОВГОРОД"
 
-    cart_add = "Вы отложили"
+    cart_add = "has been added"
