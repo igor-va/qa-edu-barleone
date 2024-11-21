@@ -4,6 +4,7 @@ from selenium import webdriver
 
 @pytest.fixture(params=['Firefox'], scope="class")
 def fixture_setup(request):
+    """Return driver browser"""
     driver = None
     if request.param == "Chrome":
         chrome_options = webdriver.ChromeOptions()
@@ -40,4 +41,5 @@ def fixture_setup(request):
 #             command_executor='http://localhost:4444/wd/hub',
 #             options=firefox_options
 #         )
-#     return driver
+#         yield driver
+#         driver.quit()
